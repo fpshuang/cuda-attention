@@ -1,4 +1,7 @@
-# flash-attention-minimal
+# CUDA Attention Minimal
+
+ > this project is built on top of [this](https://github.com/tspeterkim/flash-attention-minimal)
+
 A minimal re-implementation of Flash Attention with CUDA and PyTorch. 
 The official [implementation](https://github.com/Dao-AILab/flash-attention) can be quite daunting for a CUDA beginner
 (like myself), so this repo tries to be small and educational.
