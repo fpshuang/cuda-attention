@@ -14,6 +14,8 @@ The official [implementation](https://github.com/Dao-AILab/flash-attention) can 
 ### Benchmark
 Compare the wall-clock time between manual attention and minimal flash attention:
 ```
+ln -s /usr/local/cuda/lib64/libcudart.so /usr/local/lib/
+ln -s /usr/local/cuda/lib64/libcudart.a /usr/local/lib/
 python bench.py
 ```
 

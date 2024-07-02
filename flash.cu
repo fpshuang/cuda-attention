@@ -104,6 +104,7 @@ torch::Tensor forward(torch::Tensor Q, torch::Tensor K, torch::Tensor V) {
     cudaDeviceGetAttribute(&max_sram_size, cudaDevAttrMaxSharedMemoryPerBlock, 0);
     printf("Max shared memory: %d, requested shared memory: %d \\n", max_sram_size, sram_size);
 
+    // cudaDeviceSynchronize();
     dim3 grid_dim(B, nh);  // batch_size x num_heads
     dim3 block_dim(Bc);  // Bc threads per block
 

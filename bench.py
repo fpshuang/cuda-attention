@@ -33,7 +33,7 @@ print(prof.key_averages().table(sort_by='cuda_time_total', row_limit=10))
 print('=== profiling minimal flash attention === ')
 
 with torch.autograd.profiler.profile(use_cuda=True) as prof:
-    minimal_result = minimal_attn.forward(q, k, v)
+    minimal_result = minimal_attn.forward_flash_attention(q, k, v)
 print(prof.key_averages().table(sort_by='cuda_time_total', row_limit=10))
 
 print('attn values sanity check:', torch.allclose(minimal_result, manual_result, rtol=0, atol=1e-02))
